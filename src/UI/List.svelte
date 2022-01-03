@@ -6,8 +6,6 @@
   import { question } from "../data-store.js";
   import { allques } from "../data-store.js";
   var chr = String.fromCharCode(65 + 1);
-  console.log(chr);
-
   let allitems = true;
   var Attempt_No;
   let Remove_Duplicate;
@@ -200,7 +198,7 @@
       {#if Raw_Unattempted == 0}
         <div class="all-items">ALL ATTEMPTED</div>{/if}
       {#each $unattempted as dos, j (dos)}
-        <div class="all-items" on:click={gotoa(j, dos)}>{j + 1}.{dos}</div>
+        <div class="all-items" on:click={gotoa(j, dos)}>{localStorage.getItem(dos)}.{dos}</div>
       {/each}
     </div>
   {/if}
